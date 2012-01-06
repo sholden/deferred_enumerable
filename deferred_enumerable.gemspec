@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Scott Holden"]
   s.email       = ["scott@sshconnection.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Allows deferring execution of enumerable methods}
+  s.description = %q{Defer execution of methods such as map by [:a].defer.map(&:to_s)}
 
   s.rubyforge_project = "deferred_enumerable"
 

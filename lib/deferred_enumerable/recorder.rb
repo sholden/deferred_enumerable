@@ -44,6 +44,7 @@ module DeferredEnumerable
       if @target_object.respond_to?(method)
         if is_deferrable?(method.to_sym)
           record_call method, args, block
+          self
         else
           finalize! unless finalized?
           forward_call(finalized_object, method, args, block)

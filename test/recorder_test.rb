@@ -31,15 +31,13 @@ class RecorderTest < Test::Unit::TestCase
   end
 
   def test_should_defer_multiple_calls
-    @recorder.map(&:to_s)
-    @recorder.select{|str| str =~ /b/}
+    @recorder.map(&:to_s).select{|str| str =~ /b/}
     assert_equal 2, @recorder.recorded_calls.length
     assert !@recorder.finalized?
   end
 
   def test_should_finalize_after_non_deferrable_call
-    @recorder.map(&:to_s)
-    @recorder.select{|str| str =~ /b/}
+    @recorder.map(&:to_s).select{|str| str =~ /b/}
     result = @recorder.first
     assert_equal 'b', result
     assert_equal 2, @recorder.recorded_calls.length
