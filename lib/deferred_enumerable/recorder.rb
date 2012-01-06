@@ -37,7 +37,7 @@ module DeferredEnumerable
     end
 
     def respond_to?(method)
-      super(method) || @target_object.respond_to?(method)
+      @target_object.respond_to?(method) || super
     end
 
     def method_missing(method, *args, &block)
